@@ -1,0 +1,36 @@
+body {
+    overflow-x: hidden; /* Ngăn scroll ngang */
+  }
+  header, nav, main {
+    max-width: 100%;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
+  }
+  #genre-dropdown, #country-dropdown, #movie-container {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* CSS để điều chỉnh card size */
+  #movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Điều chỉnh độ rộng của các card */
+    gap: 16px;  /* Khoảng cách giữa các card */
+    max-width: 100%;  /* Đảm bảo container không bị tràn ra ngoài */
+    box-sizing: border-box;
+  }
+
+  /* Điều chỉnh card để chúng không bị mất phần */
+  #movie-container .movie-card {
+    min-width: 250px;  /* Đảm bảo card không quá nhỏ */
+    max-width: 100%;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng khi hover */
+  }
+
+  #movie-container .movie-card:hover {
+    transform: scale(1.05); /* Phóng to card khi hover */
+  }
+
+  #search-suggestion {
+    max-height: 500px;
+    overflow-y: auto;
+  }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xem chi tiet phim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Thêm Papa Parse để đọc CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <link rel="stylesheet" href="css/movie_detail.css">
+
+
+</head>
+<body class="bg-[#1a1a1a] text-white">
+  <!-- Header -->
+  <header class="bg-[#262626] fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="leading-tight">
+        <a href="home.html"><div class="text-xl font-bold text-white">VTN Film</div></a>
+        <div class="text-xs text-gray-400">Xem phim cực chill</div>
+      </div>
+    </div>
+    <div class="relative w-[600px]">
+      <input type="text" id="search-input" placeholder="V.d: tên phim, tên diễn viên..." class="px-4 py-2 rounded-md text-black w-full" />
+      <div id="search-suggestion" class="absolute left-0 right-0 top-full bg-[#181818] rounded-b-lg shadow-lg z-50 hidden"></div>
+      <button id="search-btn" class="absolute right-3 top-2.5 text-gray-600">
+        <i class="ph ph-magnifying-glass"></i>
+      </button>
+    </div>
+    <div class="flex items-center gap-4 text-sm">
+      <div id="greeting" class="text-lg font-semibold"></div>
+    </div>
+  </header>
+  <div class="flex min-h-screen pt-[110px]">
+    <!-- Sidebar -->
+    <aside class="text-white py-8 px-4 space-y-6 bg-[#1a1a1a] w-48 fixed top-[110px] bottom-0 left-0 flex flex-col justify-between">
+      <div>
+        <nav class="space-y-4 text-gray-300">
+          <a href="home.html" class="flex items-center gap-3 hover:text-white">
+              <i class="ph ph-house text-xl"></i> Trang chủ
+          </a>
+          <a href="#" class="flex items-center gap-3 hover:text-white">
+              <i class="ph ph-heart"></i>Yêu thích
+          </a>
+          <a href="#" class="flex items-center gap-3 hover:text-white">
+              <i class="ph ph-trend-up"></i>Xu hướng
+          </a>
+        </nav>
+      </div>
+      <div>
+        <hr class="border-gray-600 my-4">
+        <a href="#" class="flex items-center gap-3 hover:text-white">
+            <i class="ph ph-gear-six"></i> Cài đặt
+        </a>
+        <a href="index.html" class="flex items-center gap-3 hover:text-white">
+            <i class="ph ph-sign-out"></i> Đăng xuất
+        </a>
+      </div>
+    </aside>
+  <!-- Main content -->
+<main class="flex-1 px-0 py-6 ml-48">
+  <div class="container mx-auto px-4">
+    <div class="movie-image mb-6">
+      <img id="movie-poster" src="" alt="Poster Phim" class="w-full max-w-md rounded-xl shadow-md" />
+    </div>
+    <div class="movie-details text-white">
+      <div id="movie-detail">Đang tải dữ liệu phim...</div>
+    </div>
+  </div>
+
+</main>
+</div>
+   <!-- Script để xử lý dữ liệu -->
+   <script src="js/movie_detail.js">
+    
+  </script>   
+</body>
+</html>

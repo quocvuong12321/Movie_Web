@@ -1,0 +1,4 @@
+[
+    { "email": "user1@gmail.com", "password": "123456", "fullname": "Nguyễn Văn A" },
+    { "email": "user2@gmail.com", "password": "abcdef", "fullname": "Trần Thị B" }
+]

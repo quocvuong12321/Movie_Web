@@ -1,0 +1,21 @@
+/* Bạn có thể để trống hoặc thêm CSS bổ sung ở đây */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.input-style {
+    @apply w-full px-4 py-2 rounded bg-[#25324a] text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-yellow-400;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+ 
+ 
+  

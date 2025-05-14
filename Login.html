@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WATCH - Welcome</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="main.css" />
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="h-screen w-screen text-white">
+
+  <!-- Background image -->
+  <div class="flex flex-col items-center justify-center min-h-screen text-white bg-black relative">
+    <!-- Background + overlay -->
+    <img src="https://png.pngtree.com/thumb_back/fh260/background/20250307/pngtree-a-vibrant-movie-themed-background-with-the-film-reels-camera-and-image_17080149.jpg" alt="bg" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Nội dung trung tâm -->
+    <div class="relative z-10 text-center px-6 py-10 rounded-xl">
+      <h1 class="text-xl font-bold tracking-wide mb-1">WATCH</h1>
+      <p class="text-gray-300 text-sm mb-6">Enjoy the newest movies</p>
+
+      <!-- Nút mở popup Đăng nhập -->
+      <button onclick="toggleLoginModal()"
+        class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-8 rounded-xl transition-all text-sm">
+        Đăng nhập
+      </button>
+
+      <p class="text-sm text-gray-300 mt-6">
+        No account?
+        <a href="#" onclick="switchToRegister()" class="text-white underline font-semibold">Sign up</a>
+      </p>
+      <br>
+      <a href="index.html">Skip for now</a>
+    </div>
+  </div>
+
+  <!-- MODAL: Đăng nhập -->
+<div id="loginModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+    <div class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 w-[90%] max-w-md rounded-2xl p-8 shadow-xl relative text-white">
+
+      
+      <!-- Nút đóng -->
+      <button onclick="toggleLoginModal()" class="absolute top-3 right-4 text-white text-2xl font-bold leading-none">&times;</button>
+      
+      <!-- Tiêu đề -->
+      <h2 class="text-2xl font-bold mb-2">Đăng nhập</h2>
+      <p class="text-sm text-gray-400 mb-6">
+        Chưa có tài khoản?
+        <a href="#" onclick="switchToRegister()" class="text-yellow-400 hover:underline font-medium">Đăng ký</a>
+      </p>
+  
+      <!-- Form -->
+      <form class="space-y-4" id="login-form">
+        <input type="email" id="login-email" placeholder="Email"
+               class="w-full px-4 py-2 rounded-lg bg-[#25324a] text-white placeholder-gray-400 
+                      outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
+        <input type="password" id="login-password" placeholder="Mật khẩu"
+               class="w-full px-4 py-2 rounded-lg bg-[#25324a] text-white placeholder-gray-400 
+                      outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
+  
+        <button type="submit"
+                class="w-full py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-lg transition">
+          Đăng nhập
+        </button>
+        <div id="login-error" class="text-red-400 text-sm mt-2"></div>
+      </form>
+    </div>
+  </div>
+  
+
+  <!-- MODAL: Đăng ký -->
+  <div id="registerModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+    <div class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 w-[90%] max-w-md rounded-2xl p-8 shadow-xl relative text-white">
+      
+      <!-- Nút đóng -->
+      <button onclick="toggleRegisterModal()" class="absolute top-3 right-4 text-white text-2xl font-bold leading-none">&times;</button>
+      
+      <!-- Tiêu đề -->
+      <h2 class="text-2xl font-bold mb-2">Tạo tài khoản</h2>
+      <p class="text-sm text-gray-400 mb-6">
+        Đã có tài khoản?
+        <a href="#" onclick="switchToLogin()" class="text-yellow-400 hover:underline font-medium">Đăng nhập</a>
+      </p>
+  
+      <!-- Form -->
+      <form class="space-y-4">
+        <input type="text" placeholder="Tên hiển thị"
+               class="w-full px-4 py-2 rounded-lg bg-[#25324a] text-white placeholder-gray-400 
+                      outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
+        <input type="email" placeholder="Email"
+               class="w-full px-4 py-2 rounded-lg bg-[#25324a] text-white placeholder-gray-400 
+                      outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
+        <input type="password" placeholder="Mật khẩu"
+               class="w-full px-4 py-2 rounded-lg bg-[#25324a] text-white placeholder-gray-400 
+                      outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
+        <input type="password" placeholder="Nhập lại mật khẩu"
+               class="w-full px-4 py-2 rounded-lg bg-[#25324a] text-white placeholder-gray-400 
+                      outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
+        
+        <button class="w-full py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-lg transition">
+          Đăng ký
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT điều khiển -->
+  <script>
+    function toggleLoginModal() {
+      document.getElementById('loginModal').classList.toggle('hidden');
+    }
+
+    function toggleRegisterModal() {
+      document.getElementById('registerModal').classList.toggle('hidden');
+    }
+
+    function switchToRegister() {
+      toggleLoginModal();
+      toggleRegisterModal();
+    }
+
+    function switchToLogin() {
+      toggleRegisterModal();
+      toggleLoginModal();
+    }
+
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      fetch('data/users.json')
+        .then(res => res.json())
+        .then(users => {
+          const user = users.find(u => u.email === email && u.password === password);
+          if (user) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            window.location.href = "home.html";
+          } else {
+            document.getElementById('login-error').textContent = 'Sai email hoặc mật khẩu!';
+          }
+        })
+        .catch(() => {
+          document.getElementById('login-error').textContent = 'Không thể kiểm tra tài khoản. Kiểm tra lại file users.json!';
+         });
+        
+    });
+
+  </script>
+</body>
+</html>

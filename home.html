@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WATCH - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Thêm Papa Parse để đọc CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <link rel="stylesheet" href="css/home.css">
+
+</head>
+<body class="bg-[#1a1a1a] text-white">
+  <!-- Header -->
+  <header class="bg-[#262626] fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="leading-tight">
+        <a href="home.html" class="text-xl font-bold text-white">VTN Film</a>
+        <div class="text-xs text-gray-400">Xem phim cực chill</div>
+      </div>
+    </div>
+    <div class="relative w-[600px]">
+      <input type="text" id="search-input" placeholder="V.d: tên phim, tên diễn viên..." class="px-4 py-2 rounded-md text-black w-full" />
+      <div id="search-suggestion" class="absolute left-0 right-0 top-full bg-[#181818] rounded-b-lg shadow-lg z-50 hidden"></div>
+      <button id="search-btn" class="absolute right-3 top-2.5 text-gray-600">
+        <i class="ph ph-magnifying-glass"></i>
+      </button>
+    </div>
+    <div class="flex items-center gap-4 text-sm">
+      <div id="greeting" class="text-lg font-semibold"></div>
+    </div>
+  </header>
+
+  <nav class="fixed top-[72px] left-0 right-0 z-40 bg-[#262626] px-6 py-3 flex justify-center gap-6 text-sm font-semibold text-white shadow-sm">
+    <div class="max-w-7xl mx-auto flex gap-6 text-sm font-semibold justify-center">
+      <a href="#" class="text-purple-400 border-b-2 border-purple-400 pb-1">TRANG CHỦ</a>
+      <div class="relative group">
+        <button class="hover:text-white flex items-center gap-1">
+          THỂ LOẠI
+          <i class="ph ph-caret-down"></i>
+        </button>
+        <ul id="genre-dropdown" class="absolute hidden group-hover:grid bg-[#2e2e2e] mt-2 p-4 rounded-md shadow-lg z-50 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 w-[700px] text-sm">
+          <!-- Render bằng JS -->
+        </ul>        
+      </div>
+      
+      <div class="relative group">
+        <button class="hover:text-white flex items-center gap-1">
+          QUỐC GIA
+          <i class="ph ph-caret-down"></i>
+        </button>
+        <div class="absolute left-0 hidden group-hover:block w-[500px] mt-2">
+          <ul id="country-dropdown" class="bg-[#2e2e2e] p-4 rounded-md shadow-lg z-50 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-sm">
+            <!-- Quốc gia sẽ render bằng JS -->
+          </ul>
+        </div>
+      </div>
+      
+      <!-- <a href="#" class="hover:text-white">PHIM MỚI</a>
+      <a href="#" class="hover:text-white">PHIM BỘ</a>
+      <a href="#" class="hover:text-white">PHIM LẺ</a>
+      <a href="#" class="hover:text-white">PHIM THUYẾT MINH</a>
+      <a href="#" class="hover:text-white">PHIM CHIẾU RẠP</a> -->
+    </div>
+  </nav>  
+
+  <div class="flex min-h-screen pt-[110px]">
+    <!-- Sidebar -->
+    <aside class="text-white py-8 px-4 space-y-6 bg-[#1a1a1a] w-48 fixed top-[110px] bottom-0 left-0 flex flex-col justify-between">
+      <div>
+        <nav class="space-y-4 text-gray-300">
+          <a href="home.html" class="flex items-center gap-3 hover:text-white">
+              <i class="ph ph-house text-xl"></i> Trang chủ
+          </a>
+          <a href="#" class="flex items-center gap-3 hover:text-white">
+              <i class="ph ph-heart"></i>Yêu thích
+          </a>
+          <a href="#" class="flex items-center gap-3 hover:text-white">
+              <i class="ph ph-trend-up"></i>Xu hướng
+          </a>
+        </nav>
+      </div>
+      <div>
+        <hr class="border-gray-600 my-4">
+        <a href="#" class="flex items-center gap-3 hover:text-white">
+            <i class="ph ph-gear-six"></i> Cài đặt
+        </a>
+        <a href="index.html" class="flex items-center gap-3 hover:text-white">
+            <i class="ph ph-sign-out"></i> Đăng xuất
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 px-0 py-6 ml-48">
+      <!-- Top Banner -->
+      <div class="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
+        <img src="assets/images/posters/default.jpg" alt="Featured Movie" class="w-full h-full object-cover" id="featured-poster">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
+        <div class="absolute bottom-6 left-6" id="featured-movie">
+          <h2 class="text-2xl font-bold">Loading...</h2>
+          <p class="text-sm text-gray-300 mb-3">Loading...</p>
+          <div class="flex gap-3 items-center relative">
+            <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-1.5 rounded-lg text-sm hiden">Xem ngay</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Rated Movies Section -->
+      <section class="mb-8 relative min-h-[400px]">
+        <h3 class="text-xl font-semibold mb-4">Top phim được đánh giá cao</h3>
+        <button onclick="resetFilter()" class="text-sm text-purple-400 hover:underline hidden" id="back-button">Quay lại</button>
+        <!-- Nút trái -->
+        <button onclick="prevTopRated()" class="absolute left-0 top-1/2 -translate-y-1/2 z-[50] bg-black/70 hover:bg-black/90 text-white px-2 py-2 rounded-full">
+          <i class="ph ph-caret-left text-2xl"></i>
+        </button>
+      
+        <!-- Nút phải -->
+        <button onclick="nextTopRated()" class="absolute right-0 top-1/2 -translate-y-1/2 z-[50] bg-black/70 hover:bg-black/90 text-white px-2 py-2 rounded-full">
+          <i class="ph ph-caret-right text-2xl"></i>
+        </button>
+      
+        <!-- Container phim -->
+        <div id="top-rated-movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 z-10">
+          <!-- Cards sẽ được render ở đây -->
+        </div>
+      </section>
+      
+
+      <!-- Recently Updated Section -->
+      <section class="mb-8 relative min-h-[400px]">
+        <h3 class="text-xl font-semibold mb-4">Các bộ phim mới nhất</h3>
+      
+        <!-- Nút trái -->
+        <button onclick="prevRecent()" class="absolute left-0 top-1/2 -translate-y-1/2 z-[50] bg-black/70 hover:bg-black/90 text-white px-2 py-2 rounded-full">
+          <i class="ph ph-caret-left text-2xl"></i>
+        </button>
+      
+        <!-- Nút phải -->
+        <button onclick="nextRecent()" class="absolute right-0 top-1/2 -translate-y-1/2 z-[50] bg-black/70 hover:bg-black/90 text-white px-2 py-2 rounded-full">
+          <i class="ph ph-caret-right text-2xl"></i>
+        </button>
+      
+        <!-- Container phim -->
+        <div id="recent-movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 z-10">
+          <!-- Cards sẽ được render ở đây -->
+        </div>
+      </section>
+      
+    </main>
+  </div>
+
+  <div id="greeting" class="text-lg font-semibold"></div>
+
+  <!-- Script để xử lý dữ liệu -->
+  <script src="js/home.js"></script>
+</body>
+</html>
