@@ -4,6 +4,7 @@ let filterPage = 0;
 const FILTER_PER_PAGE = 20;
 let isFiltering = false;
 
+
 // Mapping từ mã ngôn ngữ sang tên quốc gia
 const languageToCountry = {
   'en': 'Anh',
@@ -27,6 +28,9 @@ let countriesList = [];
 let allCountries = new Set();
 let genresList = [];
 let allGenres = new Set();
+let topGrossMovies = [];
+let topGrossPage = 0;
+
 
 function getPosterPath(movieId) {
   const posterPath = `assets/images/posters/${movieId}.jpg`;
@@ -207,6 +211,18 @@ function renderTopRated() {
     (topRatedPage + 1) * MOVIES_PER_PAGE >= topRatedMovies.length ? 'none' : 'block';
 }
 
+function renderTopGross() {
+  const container = document.getElementById("top-gross-movies");
+  const start = topGrossPage * MOVIES_PER_PAGE;
+  const end = start + MOVIES_PER_PAGE;
+  const currentMovies = topGrossMovies.slice(start, end);
+
+  container.innerHTML = currentMovies.map(m => createMovieCard(m)).join('');
+  document.querySelector('button[onclick="prevTopGross()"]').style.display = topGrossPage === 0 ? 'none' : 'block';
+  document.querySelector('button[onclick="nextTopGross()"]').style.display =
+    (topGrossPage + 1) * MOVIES_PER_PAGE >= topGrossMovies.length ? 'none' : 'block';
+}
+
 function nextTopRated() {
   if (isFiltering) {
     if ((filterPage + 1) * FILTER_PER_PAGE < filteredMovies.length) {
@@ -232,6 +248,20 @@ function prevTopRated() {
       topRatedPage--;
       renderTopRated();
     }
+  }
+}
+
+function nextTopGross() {
+  if ((topGrossPage + 1) * MOVIES_PER_PAGE < topGrossMovies.length) {
+    topGrossPage++;
+    renderTopGross();
+  }
+}
+
+function prevTopGross() {
+  if (topGrossPage > 0) {
+    topGrossPage--;
+    renderTopGross();
   }
 }
 
@@ -287,7 +317,7 @@ function loadMovieData() {
 
       countriesList = Array.from(allCountries).sort();
       renderCountryDropdown();
-      
+      // Lọc các phim có lượt đánh giá cao nhất
       topRatedMovies = [...movies]
         .filter(m => !isNaN(m.vote_average))
         .sort((a, b) => b.vote_average - a.vote_average)
@@ -295,7 +325,7 @@ function loadMovieData() {
 
       topRatedPage = 0;
       renderTopRated();
-
+      // lọc các phim gần đây
       recentMovies = [...movies]
         .filter(m => m.release_date)
         .sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
@@ -303,6 +333,14 @@ function loadMovieData() {
 
       recentPage = 0;
       renderRecent();
+      // Lọc các phim có doanh thu cao nhất
+      topGrossMovies = [...movies]
+        .filter(m => !isNaN(m.revenue))
+        .sort((a, b) => b.revenue - a.revenue)
+        .slice(0, 12);
+
+      topGrossPage = 0;
+      renderTopGross();
 
       const featuredMovie = topRatedMovies[0];
       const featuredPosterPath = getPosterPath(featuredMovie.id);
