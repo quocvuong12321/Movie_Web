@@ -18,7 +18,7 @@
   <header class="bg-[#262626] fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between">
     <div class="flex items-center gap-4">
       <div class="leading-tight">
-        <a href="home.html" class="text-xl font-bold text-white">VTN Film</a>
+        <a href="index.html" class="text-xl font-bold text-white">VTN Film</a>
         <div class="text-xs text-gray-400">Xem phim cực chill</div>
       </div>
     </div>
@@ -36,7 +36,7 @@
 
   <nav class="fixed top-[72px] left-0 right-0 z-40 bg-[#262626] px-6 py-3 flex justify-center gap-6 text-sm font-semibold text-white shadow-sm">
     <div class="max-w-7xl mx-auto flex gap-6 text-sm font-semibold justify-center">
-      <a href="#" class="text-purple-400 border-b-2 border-purple-400 pb-1">TRANG CHỦ</a>
+      <a href="index.html" class="text-purple-400 border-b-2 border-purple-400 pb-1">TRANG CHỦ</a>
       <div class="relative group">
         <button class="hover:text-white flex items-center gap-1">
           THỂ LOẠI
@@ -47,19 +47,9 @@
         </ul>        
       </div>
       
-      <div class="relative group">
-        <button class="hover:text-white flex items-center gap-1">
-          QUỐC GIA
-          <i class="ph ph-caret-down"></i>
-        </button>
-        <div class="absolute left-0 hidden group-hover:block w-[500px] mt-2">
-          <ul id="country-dropdown" class="bg-[#2e2e2e] p-4 rounded-md shadow-lg z-50 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-sm">
-            <!-- Quốc gia sẽ render bằng JS -->
-          </ul>
-        </div>
-      </div>
+
       
-      <!-- <a href="#" class="hover:text-white">PHIM MỚI</a>
+       <!-- <a href="#" class="hover:text-white">PHIM MỚI</a>
       <a href="#" class="hover:text-white">PHIM BỘ</a>
       <a href="#" class="hover:text-white">PHIM LẺ</a>
       <a href="#" class="hover:text-white">PHIM THUYẾT MINH</a>
@@ -72,7 +62,7 @@
     <aside class="text-white py-8 px-4 space-y-6 bg-[#1a1a1a] w-48 fixed top-[110px] bottom-0 left-0 flex flex-col justify-between">
       <div>
         <nav class="space-y-4 text-gray-300">
-          <a href="home.html" class="flex items-center gap-3 hover:text-white">
+          <a href="index.html" class="flex items-center gap-3 hover:text-white">
               <i class="ph ph-house text-xl"></i> Trang chủ
           </a>
           <a href="#" class="flex items-center gap-3 hover:text-white">
@@ -97,7 +87,7 @@
     <!-- Main content -->
     <main class="flex-1 px-0 py-6 ml-48">
       <!-- Top Banner -->
-      <div class="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
+      <!-- <div class="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
         <img src="assets/images/posters/default.jpg" alt="Featured Movie" class="w-full h-full object-cover" id="featured-poster">
         <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
         <div class="absolute bottom-6 left-6" id="featured-movie">
@@ -107,8 +97,27 @@
             <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-1.5 rounded-lg text-sm hiden">Xem ngay</button>
           </div>
         </div>
-      </div>
+      </div> -->
 
+      <!-- Top phim có doanh thu cao nhất -->
+      <section class="mb-8 relative min-h-[400px]">
+        <h3 class="text-xl font-semibold mb-4">Top phim có doanh thu cao</h3>
+        <button onclick="resetFilter()" class="text-sm text-purple-400 hover:underline hidden" id="back-button">Quay lại</button>
+        <!-- Nút trái -->
+        <button onclick="prevTopGross()" class="absolute left-0 top-1/2 -translate-y-1/2 z-[50] bg-black/70 hover:bg-black/90 text-white px-2 py-2 rounded-full">
+          <i class="ph ph-caret-left text-2xl"></i>
+        </button>
+      
+        <!-- Nút phải -->
+        <button onclick="nextTopGross()" class="absolute right-0 top-1/2 -translate-y-1/2 z-[50] bg-black/70 hover:bg-black/90 text-white px-2 py-2 rounded-full">
+          <i class="ph ph-caret-right text-2xl"></i>
+        </button>
+      
+        <!-- Container phim -->
+        <div id="top-gross-movies" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 z-10">
+          <!-- Cards sẽ được render ở đây -->
+        </div>
+      </section>
 
       <!-- Top Rated Movies Section -->
       <section class="mb-8 relative min-h-[400px]">

@@ -4,33 +4,10 @@ let filterPage = 0;
 const FILTER_PER_PAGE = 20;
 let isFiltering = false;
 
-
-// Mapping từ mã ngôn ngữ sang tên quốc gia
-const languageToCountry = {
-  'en': 'Anh',
-  'vi': 'Việt Nam',
-  'ja': 'Nhật Bản',
-  'ko': 'Hàn Quốc',
-  'zh': 'Trung Quốc',
-  'fr': 'Pháp',
-  'de': 'Đức',
-  'es': 'Tây Ban Nha',
-  'it': 'Ý',
-  'ru': 'Nga',
-  'hi': 'Ấn Độ',
-  'th': 'Thái Lan',
-  'id': 'Indonesia',
-  'ms': 'Malaysia',
-  'tl': 'Philippines'
-};
-
-let countriesList = [];
-let allCountries = new Set();
 let genresList = [];
 let allGenres = new Set();
 let topGrossMovies = [];
 let topGrossPage = 0;
-
 
 function getPosterPath(movieId) {
   const posterPath = `assets/images/posters/${movieId}.jpg`;
@@ -307,16 +284,11 @@ function loadMovieData() {
         if (m.genres) {
           m.genres.forEach(g => allGenres.add(g.name));
         }
-        if (m.original_language && languageToCountry[m.original_language]) {
-          allCountries.add(languageToCountry[m.original_language]);
-        }
       });
 
       genresList = Array.from(allGenres).sort();
       renderGenreDropdown();
 
-      countriesList = Array.from(allCountries).sort();
-      renderCountryDropdown();
       // Lọc các phim có lượt đánh giá cao nhất
       topRatedMovies = [...movies]
         .filter(m => !isNaN(m.vote_average))
