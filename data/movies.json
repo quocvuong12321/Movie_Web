@@ -194046,6 +194046,671 @@
       "id": 588869,
       "name": "Claude Barras",
       "popularity": 0.4107
+    },
+    "id":575265,
+    "original_title":"Mission: Impossible - The Final Reckoning",
+    "original_language":"en",
+    "budget":400000000,
+    "revenue":204000000,
+    "runtime":170,
+    "popularity":341.8946,
+    "vote_average":7.065,
+    "vote_count":371,
+    "release_date":"2025-05-17",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Action",
+        "id":28
+      },
+      {
+        "name":"Adventure",
+        "id":12
+      },
+      {
+        "name":"Thriller",
+        "id":53
+      }
+    ],
+    "production_companies":[
+      "Paramount Pictures",
+      "Skydance Media",
+      "TC Productions"
+    ],
+    "cast":[
+      {
+        "id":500,
+        "name":"Tom Cruise",
+        "popularity":24.1376
+      },
+      {
+        "id":39459,
+        "name":"Hayley Atwell",
+        "popularity":15.2137
+      },
+      {
+        "id":10182,
+        "name":"Ving Rhames",
+        "popularity":10.0302
+      },
+      {
+        "id":11108,
+        "name":"Simon Pegg",
+        "popularity":8.1094
+      },
+      {
+        "id":65344,
+        "name":"Esai Morales",
+        "popularity":6.2274
+      }
+    ],
+    "crew":{
+      "id":9033,
+      "name":"Christopher McQuarrie",
+      "popularity":5.2445
     }
+  },
+  {
+    "id":574475,
+    "original_title":"Final Destination Bloodlines",
+    "original_language":"en",
+    "budget":50000000,
+    "revenue":186707397,
+    "runtime":110,
+    "popularity":455.0084,
+    "vote_average":7.0,
+    "vote_count":445,
+    "release_date":"2025-05-09",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Horror",
+        "id":27
+      },
+      {
+        "name":"Mystery",
+        "id":9648
+      }
+    ],
+    "production_companies":[
+      "New Line Cinema",
+      "Practical Pictures",
+      "Freshman Year",
+      "Fireside Films",
+      "Domain Entertainment"
+    ],
+    "cast":[
+      {
+        "id":3480304,
+        "name":"Kaitlyn Santa Juana",
+        "popularity":34.6079
+      },
+      {
+        "id":1547148,
+        "name":"Teo Briones",
+        "popularity":21.0102
+      },
+      {
+        "id":58724,
+        "name":"Rya Kihlstedt",
+        "popularity":3.5538
+      },
+      {
+        "id":144852,
+        "name":"Richard Harmon",
+        "popularity":9.1404
+      },
+      {
+        "id":1482198,
+        "name":"Owen Patrick Joyner",
+        "popularity":2.1231
+      }
+    ],
+    "crew":{
+      "id":1938317,
+      "name":"Adam B. Stein",
+      "popularity":1.7294
+    }
+  },
+  {
+    "id":1045021,
+    "original_title":"தக் லைஃப்",
+    "original_language":"ta",
+    "budget":35000000,
+    "revenue":0,
+    "runtime":166,
+    "popularity":5.1089,
+    "vote_average":0.0,
+    "vote_count":0,
+    "release_date":"2025-06-04",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Action",
+        "id":28
+      },
+      {
+        "name":"Crime",
+        "id":80
+      },
+      {
+        "name":"Drama",
+        "id":18
+      }
+    ],
+    "production_companies":[
+      "Raajkamal Films International",
+      "Madras Talkies",
+      "Red Giant Movies"
+    ],
+    "cast":[
+      {
+        "id":93193,
+        "name":"Kamal Haasan",
+        "popularity":3.1758
+      },
+      {
+        "id":222760,
+        "name":"Silambarasan",
+        "popularity":3.1924
+      },
+      {
+        "id":116925,
+        "name":"Trisha Krishnan",
+        "popularity":9.5475
+      },
+      {
+        "id":584496,
+        "name":"Abhirami",
+        "popularity":1.1096
+      },
+      {
+        "id":1357376,
+        "name":"Joju George",
+        "popularity":2.4829
+      }
+    ],
+    "crew":{
+      "id":78747,
+      "name":"Mani Ratnam",
+      "popularity":2.9224
+    }
+  },
+  {
+    "id":1357359,
+    "original_title":"Ejen Ali: The Movie 2",
+    "original_language":"ms",
+    "budget":2200000,
+    "revenue":0,
+    "runtime":120,
+    "popularity":15.5246,
+    "vote_average":10.0,
+    "vote_count":1,
+    "release_date":"2025-05-22",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Animation",
+        "id":16
+      },
+      {
+        "name":"Action",
+        "id":28
+      },
+      {
+        "name":"Adventure",
+        "id":12
+      },
+      {
+        "name":"Comedy",
+        "id":35
+      },
+      {
+        "name":"Family",
+        "id":10751
+      },
+      {
+        "name":"Mystery",
+        "id":9648
+      },
+      {
+        "name":"Science Fiction",
+        "id":878
+      },
+      {
+        "name":"Thriller",
+        "id":53
+      }
+    ],
+    "production_companies":[
+      "WAU Animation",
+      "Primeworks Studios",
+      "Komet Productions"
+    ],
+    "cast":[
+      {
+        "id":1241066,
+        "name":"Ida Rahayu",
+        "popularity":0.3457
+      },
+      {
+        "id":4011376,
+        "name":"Noorhayati Maslini",
+        "popularity":0.5521
+      },
+      {
+        "id":1241067,
+        "name":"Shafiq Isa",
+        "popularity":0.4178
+      },
+      {
+        "id":5454296,
+        "name":"Omar H. Ali",
+        "popularity":0.0071
+      },
+      {
+        "id":4401624,
+        "name":"Su Ling Chan",
+        "popularity":0.1483
+      }
+    ],
+    "crew":{
+      "id":2505927,
+      "name":"Muhammad Usamah Zaid",
+      "popularity":0.3059
+    }
+  },
+  {
+    "id":552524,
+    "original_title":"Lilo & Stitch",
+    "original_language":"en",
+    "budget":100000000,
+    "revenue":341700000,
+    "runtime":108,
+    "popularity":719.8697,
+    "vote_average":7.0,
+    "vote_count":229,
+    "release_date":"2025-05-17",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Family",
+        "id":10751
+      },
+      {
+        "name":"Comedy",
+        "id":35
+      },
+      {
+        "name":"Science Fiction",
+        "id":878
+      }
+    ],
+    "production_companies":[
+      "Walt Disney Pictures",
+      "Rideback"
+    ],
+    "cast":[
+      {
+        "id":3988423,
+        "name":"Maia Kealoha",
+        "popularity":5.0939
+      },
+      {
+        "id":3025125,
+        "name":"Sydney Agudong",
+        "popularity":12.3375
+      },
+      {
+        "id":66193,
+        "name":"Chris Sanders",
+        "popularity":5.1804
+      },
+      {
+        "id":58225,
+        "name":"Zach Galifianakis",
+        "popularity":8.8115
+      },
+      {
+        "id":141034,
+        "name":"Billy Magnussen",
+        "popularity":8.1008
+      }
+    ],
+    "crew":{
+      "id":1540069,
+      "name":"Dean Fleischer Camp",
+      "popularity":2.6766
+    }
+  },
+  {
+    "id":1093237,
+    "original_title":"Hurry Up Tomorrow",
+    "original_language":"en",
+    "budget":15000000,
+    "revenue":5518263,
+    "runtime":106,
+    "popularity":16.1333,
+    "vote_average":5.0,
+    "vote_count":36,
+    "release_date":"2025-05-14",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Thriller",
+        "id":53
+      },
+      {
+        "name":"Music",
+        "id":10402
+      }
+    ],
+    "production_companies":[
+      "Manic Phase",
+      "Live Nation Productions"
+    ],
+    "cast":[
+      {
+        "id":1549008,
+        "name":"The Weeknd",
+        "popularity":3.9109
+      },
+      {
+        "id":974169,
+        "name":"Jenna Ortega",
+        "popularity":22.5838
+      },
+      {
+        "id":1290466,
+        "name":"Barry Keoghan",
+        "popularity":6.9011
+      },
+      {
+        "id":98522,
+        "name":"Riley Keough",
+        "popularity":5.622
+      },
+      {
+        "id":3665739,
+        "name":"Ash T",
+        "popularity":0.5128
+      }
+    ],
+    "crew":{
+      "id":1423660,
+      "name":"Trey Edward Shults",
+      "popularity":2.4846
+    }
+  },
+  {
+    "id":713364,
+    "original_title":"Clown in a Cornfield",
+    "original_language":"en",
+    "budget":1000000,
+    "revenue":5269735,
+    "runtime":96,
+    "popularity":8.2968,
+    "vote_average":6.1,
+    "vote_count":21,
+    "release_date":"2025-05-08",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Horror",
+        "id":27
+      },
+      {
+        "name":"Mystery",
+        "id":9648
+      },
+      {
+        "name":"Thriller",
+        "id":53
+      }
+    ],
+    "production_companies":[
+      "Temple Hill Entertainment",
+      "Rhea Films",
+      "Protagonist Pictures",
+      "Thundersnow Pictures",
+      "1821 Pictures",
+      "Hercules Film Fund"
+    ],
+    "cast":[
+      {
+        "id":1183993,
+        "name":"Katie Douglas",
+        "popularity":4.1792
+      },
+      {
+        "id":56262,
+        "name":"Aaron Abrams",
+        "popularity":2.4532
+      },
+      {
+        "id":1857464,
+        "name":"Carson MacCormac",
+        "popularity":1.2653
+      },
+      {
+        "id":1780951,
+        "name":"Cassandra Potenza",
+        "popularity":1.2692
+      },
+      {
+        "id":2425167,
+        "name":"Verity Marks",
+        "popularity":1.1362
+      }
+    ],
+    "crew":{
+      "id":52479,
+      "name":"Eli Craig",
+      "popularity":1.898
+    }
+  },
+  {
+    "id":1100988,
+    "original_title":"28 Years Later",
+    "original_language":"en",
+    "budget":75000000,
+    "revenue":0,
+    "runtime":126,
+    "popularity":15.994,
+    "vote_average":0.0,
+    "vote_count":0,
+    "release_date":"2025-06-18",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Horror",
+        "id":27
+      },
+      {
+        "name":"Thriller",
+        "id":53
+      },
+      {
+        "name":"Science Fiction",
+        "id":878
+      }
+    ],
+    "production_companies":[
+      "DNA Films",
+      "Decibel Films",
+      "Columbia Pictures",
+      "BFI"
+    ],
+    "cast":[
+      {
+        "id":1388593,
+        "name":"Jodie Comer",
+        "popularity":6.1015
+      },
+      {
+        "id":27428,
+        "name":"Aaron Taylor-Johnson",
+        "popularity":7.5772
+      },
+      {
+        "id":85065,
+        "name":"Jack O'Connell",
+        "popularity":6.4113
+      },
+      {
+        "id":5107934,
+        "name":"Alfie Williams",
+        "popularity":0.5497
+      },
+      {
+        "id":5469,
+        "name":"Ralph Fiennes",
+        "popularity":10.018
+      }
+    ],
+    "crew":{
+      "id":2034,
+      "name":"Danny Boyle",
+      "popularity":3.0411
+    }
+  },
+  {
+    "id":1180906,
+    "original_title":"Desert Dawn",
+    "original_language":"en",
+    "budget":1500000,
+    "revenue":0,
+    "runtime":89,
+    "popularity":58.5727,
+    "vote_average":7.571,
+    "vote_count":7,
+    "release_date":"2025-05-15",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Action",
+        "id":28
+      },
+      {
+        "name":"Crime",
+        "id":80
+      },
+      {
+        "name":"Mystery",
+        "id":9648
+      },
+      {
+        "name":"Thriller",
+        "id":53
+      }
+    ],
+    "production_companies":[
+      "Premiere Entertainment Group",
+      "Al Bravo Films"
+    ],
+    "cast":[
+      {
+        "id":34502,
+        "name":"Kellan Lutz",
+        "popularity":4.9416
+      },
+      {
+        "id":55086,
+        "name":"Cam Gigandet",
+        "popularity":4.2289
+      },
+      {
+        "id":228371,
+        "name":"Chad Michael Collins",
+        "popularity":2.4429
+      },
+      {
+        "id":53185,
+        "name":"Texas Battle",
+        "popularity":2.5085
+      },
+      {
+        "id":2091809,
+        "name":"Mike Ferguson",
+        "popularity":1.7604
+      }
+    ],
+    "crew":{
+      "id":1544343,
+      "name":"Marty Murray",
+      "popularity":0.44
+    }
+  },
+  {
+    "id":977294,
+    "original_title":"Tin Soldier",
+    "original_language":"en",
+    "budget":45000000,
+    "revenue":0,
+    "runtime":87,
+    "popularity":185.0718,
+    "vote_average":5.181,
+    "vote_count":36,
+    "release_date":"2025-05-22",
+    "release_year":2025,
+    "genres":[
+      {
+        "name":"Action",
+        "id":28
+      },
+      {
+        "name":"Thriller",
+        "id":53
+      }
+    ],
+    "production_companies":[
+      "Unified Pictures",
+      "Romulus Entertainment",
+      "Shaken, Not Stirred Productions",
+      "Aloe Entertainment",
+      "Current Entertainment",
+      "Media Finance Capital",
+      "TSF Productions",
+      "Road Less Traveled Productions",
+      "Lost Winds Entertainment",
+      "Golden Liberty Films",
+      "Daniel Finkelman Films"
+    ],
+    "cast":[
+      {
+        "id":928572,
+        "name":"Scott Eastwood",
+        "popularity":5.5268
+      },
+      {
+        "id":380,
+        "name":"Robert De Niro",
+        "popularity":12.0488
+      },
+      {
+        "id":134,
+        "name":"Jamie Foxx",
+        "popularity":6.8687
+      },
+      {
+        "id":5723,
+        "name":"John Leguizamo",
+        "popularity":4.8007
+      },
+      {
+        "id":453272,
+        "name":"Nora Arnezeder",
+        "popularity":2.7059
+      }
+    ],
+    "crew":{
+      "id":144221,
+      "name":"Brad Furman",
+      "popularity":2.3273
+    }
+    
+    
   }
+  
+  
 ]
